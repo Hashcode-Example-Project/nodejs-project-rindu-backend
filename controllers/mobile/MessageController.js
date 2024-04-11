@@ -31,7 +31,7 @@ const sendMessage = async (req, res) => {
     const newMessage = await Message.create({
       text,
       user_id: id
-    });
+    }, { raw: true });
 
     // Send the newly created message in the response
     res.status(201).json({
