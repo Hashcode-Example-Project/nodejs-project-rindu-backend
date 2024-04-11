@@ -1,9 +1,11 @@
+const dotenv = require('dotenv').config().parsed;
+
 module.exports ={
   "development": {
-    "username": "postgres",
-    "password": "123456",
-    "database": "db_rindu",
-    "host": "127.0.0.1",
+    "username": dotenv.DB_USER,
+    "password": dotenv.DB_PASSWORD,
+    "database": dotenv.DB_NAME,
+    "host": dotenv.DB_HOST,
     "dialect": "postgres"
   },
   "test": {
