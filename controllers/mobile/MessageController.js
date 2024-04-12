@@ -9,12 +9,7 @@ const getAllMessageByUserId = async (req, res) => {
       attributes: [
         "id",
         "text",
-        "createdAt"
       ],
-      include: [{
-        model: User,
-        attributes: ['full_name']
-      }],
       where: {user_id: id}
     });
 

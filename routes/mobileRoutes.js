@@ -13,7 +13,7 @@ router.post("/auth/login", login);
 router.get("/user/profile", authentication,  getUserProfile);
 router.get("/marchandise", getAllMerchandise);
 router.get("/marchandise/:id", getMerchandiseById);
-router.get("/messages/", authentication, getAllMessageByUserId);
+router.get("/messages", authentication, getAllMessageByUserId);
 router.post("/message", authentication, sendMessage);
 
 module.exports = router;
