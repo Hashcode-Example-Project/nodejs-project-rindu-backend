@@ -29,7 +29,6 @@ const getAllMessageByUserId = async (req, res) => {
 
 const sendMessage = async (req, res) => {
   try {
-    console.log(req.user)
     const { text } = req.body;
     const { id } = req.user;
     // Create a new message in the database
@@ -45,7 +44,6 @@ const sendMessage = async (req, res) => {
       data: []
     });
   } catch (error) {
-    console.error('Error:', error);
     res.status(500).json({
       status: 'error',
       message: 'Internal server error'
