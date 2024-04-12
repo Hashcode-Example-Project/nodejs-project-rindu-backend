@@ -6,6 +6,15 @@ const getAllMessageByUserId = async (req, res) => {
 
     // Fetch all messages for the given user ID from the database
     const messages = await Message.findAll({
+      attributes: [
+        "id",
+        "text",
+        "createdAt"
+      ],
+      include: [{
+        model: User,
+        attributes: ['full_name']
+      }],
       where: {user_id: id}
     });
 
@@ -25,6 +34,7 @@ const getAllMessageByUserId = async (req, res) => {
 
 const sendMessage = async (req, res) => {
   try {
+    console.log(req.user)
     const { text } = req.body;
     const { id } = req.user;
     // Create a new message in the database
