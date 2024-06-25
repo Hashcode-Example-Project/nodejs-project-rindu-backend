@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Message.init({
     text: DataTypes.TEXT,
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    is_selected: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Message',
